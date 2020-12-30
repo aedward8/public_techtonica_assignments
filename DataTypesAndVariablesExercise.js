@@ -139,4 +139,5 @@ const myAnswerForExercise22 = true; // I am not sure why this ran true when it s
 // as running my code on Repl.it
 
 // Email your file to the course staff, 
-// or commit your file to GitHub and email us a link.
+// or commit your file to GitHub and email us a link. 
+
