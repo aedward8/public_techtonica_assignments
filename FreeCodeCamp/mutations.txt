@@ -1,0 +1,16 @@
+function mutation(arr) {
+  let arr1=arr[0].toLowerCase();
+  let char1 =arr1.split('');
+  let arr2=arr[1].toLowerCase();
+  let char2 =arr2.split('');
+  
+  for (let i=0;i<char2.length;i++) {
+    //console.log(char1);
+    if (char1.indexOf(char2[i])< 0){
+      return false;
+    }
+  }
+  return true;
+}
+
+mutation(["hello", "Hello"])
