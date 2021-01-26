@@ -17,11 +17,13 @@ div{
 .caption {
     max-width: 600px;
   }
-   /* Align image and ingredients left*/
-  .left{
-      float: left;
+
+/* Align image and ingredients left*/
+.left{
+    max-width: 600px;
+    float: left;
   }
  /* Aligin instructions right*/
-  .right{
+.right{
     float:  right;
 }
