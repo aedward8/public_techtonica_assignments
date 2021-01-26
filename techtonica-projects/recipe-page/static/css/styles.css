@@ -1,0 +1,32 @@
+body{
+    /* change background color*/
+    background-color:bisque;
+}
+
+h2{
+    font-family: cursive;
+    font-size:x-large;
+}
+
+div{
+    color:darkslategrey;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+
+ /* Constrain the description to the width of the image*/
+.img{
+    display: table;    
+}
+
+.caption {
+    display: table-caption;
+    caption-side: top;
+  }
+   /* Align image and ingredients left*/
+  .left{
+      float: left;
+  }
+ /* Aligin instructions right*/
+  .right{
+    float:  right;
+}
