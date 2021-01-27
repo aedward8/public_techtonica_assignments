@@ -13,6 +13,9 @@ div{
     color:darkslategrey;
     font-family: 'Open Sans', sans-serif ;
 }
+.top{
+    margin-top: 10px;
+}
 
  /* Constrain the description to the width of the image*/
 .caption {
@@ -30,4 +33,9 @@ div{
     max-width: 600px;
     float: left; 
     margin-left: 30px;
+}
+.navbar{
+    background-color:#C4DFFF;
+    font-family:Impact, Arial Narrow Bold, 'Arial Narrow Bold', sans-serif;
+    max-width: 600px;
 }
