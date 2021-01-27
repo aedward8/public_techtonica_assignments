@@ -27,6 +27,6 @@ div{
  /* Aligin instructions right*/
 .right{
     max-width: 600px;
-    float: left;
+    float: center; 
     margin-left: 30px;
 }
