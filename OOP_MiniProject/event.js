@@ -40,6 +40,7 @@ class Event {
             return sent;
         }
     }
+<<<<<<< HEAD
 
     cheapestTicket(){
     let sent = "Cheapest Ticket: ";
@@ -62,6 +63,9 @@ class Event {
     }
 }
 
+=======
+}
+>>>>>>> 6e0f693e50503f43d4f1a261fca12a301ece8087
 // store the name and price of a ticket type (for example, maybe "Balcony" tickets are $35).
 class TicketType {
     constructor(ticketType, price) {
@@ -92,9 +96,12 @@ eventObj3.addAvailableTickets("Balcony", 100)
 console.log(eventObj3.searchTickets(0, 250)) // Eligible tickets: 1. Balcony ($100) 2. Mezzanine ($200)
 console.log(eventObj1.searchTickets(0, 50)) // No tickets available.
 
+<<<<<<< HEAD
 // check cheapestTicket method
 console.log(eventObj3.cheapestTicket()) // Cheapest Ticket: Balcony ($100)
 
+=======
+>>>>>>> 6e0f693e50503f43d4f1a261fca12a301ece8087
 //Create an empty Event array.
 const eventArray = new Array();
 
@@ -111,7 +118,11 @@ console.log(eventArray);
 $(document).ready(function () {
     let html = '';
     $.each(eventArray, function (index, item) {
+<<<<<<< HEAD
       html += `<li>${item.name} - ${item.description}-${item.searchTickets(0,100)}- ${item.cheapestTicket()}</li>`;
+=======
+      html += `<li>${item.name} - ${item.description}- ${item.searchTickets(0,100)}</li>`;
+>>>>>>> 6e0f693e50503f43d4f1a261fca12a301ece8087
     });
     // insert final html into #event...
     $('#event').html(html);
