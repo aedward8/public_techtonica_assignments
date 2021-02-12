@@ -4,7 +4,10 @@
 package-lock.json
 # Locally-generated files
 .DS_Store
-#githug
-githug/
+
+
 #Sub DS
 /techtonica-projects/.DS_Store
+
+#VSCode_Files
+*.vscode  
