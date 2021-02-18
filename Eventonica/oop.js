@@ -49,9 +49,10 @@ class User {
     }
 }
 
+
 class Eventonica {
     addEvent(name,date,location,category) {
-    new Event(name,date,location,category);
+        new Event(name,date,location,category);
     }
   
     updateEvent(name,property,change) {
@@ -129,7 +130,7 @@ eventonica.addEvent('Not New Years','01-01-2021','New York','Celebration');
 eventonica.addEvent('New Years','01-01-2021','New York','Celebration');
 
 //console.log(eventonica.returnAllEvents());
-//console.log(eventonica.findEventsbyCategory('Celebration'));
+console.log(eventonica.findEventsbyCategory('Celebration'));
 //console.log(eventonica.findEventsByDate('01-01-2021'));
 
 //eventonica.deleteEvent('New Years');
@@ -143,4 +144,7 @@ eventonica.addUser('Abby','Abby123@gmail.com','Young adult');
 eventonica.updateUser('Abby','age_group','teenager');
 console.log(eventonica.returnAllUsers());
 
-
+let x = 1;
+console.log(++x)
+//console.log(x++)
+console.log(x)
