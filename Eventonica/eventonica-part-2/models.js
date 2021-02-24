@@ -67,6 +67,7 @@ class User {
     this.name=name;
     this.email=email;
     this.age=age;
+    this.faveEvents=[];
     // decide what properties are required on an instance
     User.all.push(this); // keep track of all created instances
   }
@@ -141,6 +142,31 @@ class Eventonica {
       console.log("Your User has been removed from Eventonica.");
      }
   }
+
+  //getter function for selected user object
+  getUser(user_id){
+    let user_index = User.all.map(x => x.id).indexOf(user_id);
+    return User.all[user_index]
+  }
+
+  // getter function for selected event object
+  getEvent(event_id){
+    let event_index = Event.all.map(x => x.id).indexOf(event_id);
+    return Event.all[event_index]
+  }
+
+  faveEvent(user_id,event_id) {
+    // Each User has a fav events array to store events
+    let user = this.getUser(user_id);
+    let event = this.getEvent(event_id);
+    let index = user.faveEvents.indexOf(event);
+    if(index>-1) {
+      user.faveEvents.splice(index,1);
+    } else{
+      user.faveEvents.push(event);
+    }
+  }
+
 }
 
 

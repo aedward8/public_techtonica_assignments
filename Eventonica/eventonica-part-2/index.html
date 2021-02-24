@@ -36,6 +36,25 @@
                   placeholder="Virtual corgi meetup"
                 />
               </fieldset>
+              <fieldset>
+                <label>Date</label>
+                <input type="date" id="add-event-date" />
+              </fieldset>
+              <fieldset>
+                <label>Location</label>
+                <input type="text" id="add-event-location" />
+              </fieldset>
+              <fieldset>
+                <!-- <input type="text" id="add-event-category" /> -->
+                <label>Category:</label>
+
+                <select name="category" id="cat-select">
+                    <option value="">--Please select an option--</option>
+                    <option value="study">Study</option>
+                    <option value="live-music">Live-Music</option>
+                    <option value="relax">Relaxation</option>
+                </select>
+              </fieldset>
 
               <!-- Add more form fields here -->
               <input type="submit" />
@@ -97,6 +116,7 @@
         </section>
       </div>
 
+
       <aside class="search-toolbar">
         <div>
           <h3>Find Events</h3>
@@ -113,6 +133,37 @@
             <input type="submit" value="Search" />
           </form>
         </div>
+
+        <section class="favorite-events">
+          <h2>Favorite Events</h2>
+          <h3 id='fave-user'></h3>
+          <ul id="fav-event-list">
+            <!-- display all favorite events here by user -->
+            <li>...</li>
+          </ul>
+
+          <div>
+            <h3>Select User & Favorite Event</h3>
+            <form id="fav-event" action="#">
+              <fieldset>
+                <label>User Id</label>
+                <input type="text" id="fave-user-id" />
+              </fieldset>
+              <fieldset>
+                <label>Event Id</label>
+                <input type="text" id="fave-event-id" />
+              </fieldset>
+              <fieldset>
+
+              <!-- Add more form fields here -->
+              <input type="submit" value="Add" />
+            </form>
+          </div>
+
+
+        </section>
+
+
       </aside>
     </main>
 
