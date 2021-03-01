@@ -4,7 +4,7 @@
 
 This project is a full-stack webpage that is a calendar that allows users to manage their events. Users can add/delete events and even favorite events
 to be stored with their user profile. The next phase of the project will include searching for events by date and or category! Woohoo! The final version 
-of this project will include the popular front-end framework React. /n
+of this project will include the popular front-end framework React.<br>
 <i>This project is part of my coding journey with Techtonica.</i>
 
 <h2>Project Attributes</h2>
