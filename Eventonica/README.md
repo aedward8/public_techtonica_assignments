@@ -22,3 +22,6 @@ of this project will include the popular front-end framework React.
   <li> Update Event </li>
   <li> 
 </ul>
+
+<img src="https://github.com/aedward8/public_techtonica_assignments/blob/main/Eventonica/eventonica-part-2/Eventonica_readme.png" alt="Front Page of Eventonica UI" style="max-width:100%;">
+
