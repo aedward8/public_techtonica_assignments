@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteEvent: ()=>{
       app.deleteEvent(event.id);
       refreshEventsList();
+      console.log(Event.all);
+      const user_id = parseInt(document.querySelector("#fave-user-id").value);
+      //refreshFaveEventsList(user_id ); 
     }}
   })
   //array of objects each with an event object and a delete Event fn for that event
@@ -44,14 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // show initial Events list 
   refreshEventsList();
 
-  const refreshFaveEventsList = (user_id) => {
-    let user = app.getUser(user_id);
-    document.querySelector("#fave-user").innerHTML = `<h3>${user.name}</h3>`
-    document.querySelector("#fav-event-list").innerHTML = user.faveEvents
-      .map((event) => `<li> ${event.name} ${event.date} ${event.location} ${event.category} Event_Id: ${event.id} </li>`)
-      .join("\n");
-  };
-
+ 
   // Build HTML list for all Users.
   const refreshUsersList = () => {
     document.querySelector("#users-list").innerHTML = User.all
@@ -125,6 +121,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
 
 
+// Fave Event List
+const refreshFaveEventsList = (user_id) => {
+  let user = app.getUser(user_id);
+    document.querySelector("#fave-user").innerHTML = `<h3>${user.name}</h3>`
+    // document.querySelector("#fav-event-list").innerHTML = user.faveEvents
+    // .map((event) => `<li> ${event.name} ${event.date} ${event.location} ${event.category} Event_Id: ${event.id} </li>`)
+    // .join("\n");
+    // console.log(user.faveEvents);
+  let displayArray=[];
+  for (let id of user.faveEventsId){
+    let event = app.getEvent(id)
+    if(event){
+      displayArray.push(`<li> ${event.name} ${event.date} ${event.location} ${event.category} Event_Id: ${event.id} </li>`)
+    }
+  }
+
+  document.querySelector("#fav-event-list").innerHTML = displayArray.join("\n")
+};
+
 
 const addFaveEventForm = document.querySelector("#fav-event");
 addFaveEventForm.addEventListener("submit", (submitEvent) => {
@@ -140,7 +155,6 @@ addFaveEventForm.addEventListener("submit", (submitEvent) => {
 
 
 const refreshFindEventsList = (finalArray) => {
-  
   document.querySelector("#find-event-list").innerHTML = finalArray
     .map(
       (event)  => `<li>${event.name} ${event.date} ${event.location} ${event.category} Event_Id: ${event.id} </li>`)
