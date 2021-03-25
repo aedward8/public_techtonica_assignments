@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //import logo from "./logo.svg";
 import "./App.css";
 import * as apiClient from "./apiClient";
@@ -12,10 +12,11 @@ function App() {
     setSights(await apiClient.getSights());
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Anything in here is fired on component mount.
     loadSights();
   }, []);
+  // [] ensures that we only make one request
 
   return (
     <div className="App">
@@ -27,25 +28,59 @@ function App() {
 
 function SightingList({ sights }) {
   return (
-    <div className="sighting_list">
+    <>
       <h1>Check out all of our Animal Sightings</h1>
-      {sights.map(
-        ({
-          id,
-          sighting_time,
-          individual_id,
-          location,
-          health,
-          email,
-          record_created,
-        }) => (
-          <div key={id}>
-            {sighting_time}, {individual_id}, {location}, {health}, {email},{" "}
-            {record_created}
-          </div>
-        )
-      )}
-    </div>
+      <div>
+        <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sighting Time</th>
+              <th>Nickname</th>
+              <th>Location</th>
+              <th>Healthy</th>
+              <th>Email</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sights.map(
+              ({ id, sighting_time, nickname, location, health, email }) => (
+                <tr>
+                  {/* <div key={id}> */}
+                  <td>{sighting_time}</td>
+                  <td>{nickname}</td>
+                  <td>{location}</td>
+                  <td>{health ? "True" : "False"}</td>
+                  <td>{email}</td>
+                  <td>Edit</td>
+                  <td>Delete</td>
+                  {/* </div> */}
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
+      </div>
+      {/* <div className="sighting_list">
+        {sights.map(
+          ({
+            id,
+            sighting_time,
+            nickname,
+            individual_id,
+            location,
+            health,
+            email,
+          }) => (
+            <div key={id}>
+              {sighting_time}, {individual_id},{nickname} {location}, Healthy ?{" "}
+              {health ? "True" : "False"}, {email},{" "}
+            </div>
+          )
+        )}
+      </div> */}
+    </>
   );
 }
 

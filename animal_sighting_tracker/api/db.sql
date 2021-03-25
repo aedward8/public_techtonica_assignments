@@ -66,3 +66,5 @@ VALUES
 (DEFAULT,'2018-12-03 13:43:23', 7, '55°57N  3°11W', false, 'axereclusive@gmail.com', NOW()), 
 (DEFAULT,'2018-03-03 10:27:57', 1, 'Indianapolis, United States', true, 'slobreaction@gmail.com', NOW()), 
 (DEFAULT,'2021-01-08 01:30:26', 9, '30°45N  76°47E', false, 'birchlawful@gmail.com', NOW()); 
+
+
