@@ -40,6 +40,17 @@ app.get("/sights", async (req, res) => {
   }
 });
 
+// Delete A Sight
+app.delete("/sights/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleteSight = await db.deleteSight(id);
+    res.status(200).json(deleteSight);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 // Create a New Sighting
 app.post("/sights", async (req, res) => {
   try {
